@@ -1,0 +1,158 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap');
+
+  *{
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+  }
+
+  :root{
+    --cursorX:0vw;
+    --boxShadowBar:0 0 5px #7bacff, 0 0 6px #7bacff, 0 0 7px #7bacff,
+    0 0 8px #7bacff, 0 0 9px #7bacff, 0 0 10px #7bacff, 0 0 20px #7bacff,
+    0 0 40px #7bacff, 0 0 320px #7bacff, 0 0 330px #7bacff;
+  }
+  body{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-color: black;
+  }
+ 
+  .bar{
+    position: absolute;
+    cursor: grab;
+   top: 40px;
+    width: 60%;
+    left: 300px;
+    height: 25px;
+  border-radius: 10px;
+  z-index: 99;
+  background-color: #fefbff;
+  box-shadow: var(--boxShadowBar);  
+  animation: bar 2s ease-in-out;
+  }
+nav{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+   
+    align-items: center;
+    margin: 0 auto;
+}
+nav h3{
+    font-size: 18px;
+}
+nav h5{
+    font-size: 16px;
+}
+section{
+    overflow-x: hidden;
+    width: 100vw;
+    height: calc(100vh - 0px);
+   justify-content: center;
+    display: flex;
+    color: white;
+    align-items: center;
+
+}
+main{
+   
+   
+    width: 700px;
+}
+main h4{
+    font-size: 54px;
+}
+main h4 span{
+    color: #7bacff;
+    text-shadow: 0 0 5px #7bacff;
+ letter-spacing: -7px;
+}
+main h4 span:nth-child(4){
+    margin-left: 9px ;
+}
+main p{
+    font-size: 20px;
+    opacity: 0.7;
+    
+
+}
+
+@keyframes fluctuate {
+    0% {
+        background: radial-gradient(
+          ellipse 100vmax 50vmax at var(--cursorX) 50vh,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      }
+      20% {
+        background: radial-gradient(
+          ellipse 100vmax 50vmax at var(--cursorX) 50vh,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      }
+      40% {
+        background: radial-gradient(
+          ellipse 100vmax 50vmax at var(--cursorX) 50vh,
+          rgba(0, 0, 0, 0.9) 0%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      }
+      100% {
+        background: radial-gradient(
+          ellipse 100vmax 50vmax at var(--cursorX) 50vh,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(0, 0, 0, 0.9) 100%
+        );
+      }
+}
+@keyframes bar {
+    0% {
+        box-shadow: none;
+        width: 0;
+      }
+      20% {
+        box-shadow:var(--boxShadowBar)
+      }
+      30% {
+        box-shadow: none;
+        width: 100;
+      }
+      50%{
+        box-shadow:var(--boxShadowBar)
+      }
+      70%{
+        box-shadow: none;
+      }
+      100% {
+        box-shadow: var(--boxShadowBar);
+        
+      }
+}
+
+@media only screen and (max-width: 1320px) {
+    .bar{
+       
+      
+        width: 90%;
+        left: 20px;
+        top: 50px;
+        
+      }
+
+      section{
+       
+        height: 100vh;
+      margin-top: 5rem;
+        display: block;
+       
+    
+    }
+}
